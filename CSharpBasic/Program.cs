@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using System.Diagnostics;               //Stopwatch
 using System.Text.RegularExpressions;   //Regex
 
-namespace NahNahNah {
-    class ChuongTrinh {
+//.NET Framework 4.8.1
+namespace CSharpBasic {
+    class Program {
         static void Main(string[] args) {
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
@@ -15,14 +16,10 @@ namespace NahNahNah {
             //b = double.Parse(Console.ReadLine());
             //a = Convert.ToInt32(Console.ReadLine());
             //b = Convert.ToInt32(Console.ReadLine());
-
-
-
-
+            xuLyChuanHoaChuoiVaTaoEmail();
 
             Console.ReadKey();
         }
-
         #region object co the luu bat ki kieu du lieu nao
         //object[] vs = new object[10];
         //string str1 = "asdasd";
@@ -165,12 +162,12 @@ namespace NahNahNah {
         static void xuLyChuanHoaChuoiVaTaoEmail() {
             //Console.Write("Nhập họ và tên: ");
             //string fullName = Console.ReadLine();
-            string fullName = "          pHAn      nGuyỄN      ThANh       phÁp      ";
+            string fullName = "          ngUYễn       PhẠm    tHỊ    văN      bÉ         BỐn     ";
             Console.WriteLine("Chuỗi gốc: " + fullName);
 
             //Chuan hoa chuoi va viet hoa ky tu dau moi tu
-            string result = capitalizeEachWord(Regex.Replace(fullName.Trim(), @"\s+", " ").ToLower());
-            Console.WriteLine("Sau khi chuẩn hóa và viết hoa chữ cái đầu mỗi từ: \n\t" + result);
+            string result = CapitalizeEachWord(Regex.Replace(fullName.Trim(), @"\s+", " ").ToLower());
+            Console.WriteLine("Chuẩn hóa và viết hoa chữ cái đầu: " + result);
 
             //Cat chuoi thanh tung tu
             MatchCollection nameCollection = Regex.Matches(result, @"\b\w+");
@@ -188,23 +185,27 @@ namespace NahNahNah {
             Console.WriteLine($"Tên đệm: {middleName}");
             Console.WriteLine($"Tên: {firstName}");
 
-            //Khoi tao email
+            //Xuat email duoc tao
+            Console.WriteLine("Email: {0}", CreateEmail(nameCollection));
+        }
+
+        private static string CreateEmail(MatchCollection nameCollection) {
             StringBuilder strBDTemp = new StringBuilder($"{nameCollection[nameCollection.Count - 1]}");
             for (int i = 0; i < nameCollection.Count - 1; i++) {
                 strBDTemp.Append($"{nameCollection[i]}"[0]);
             }
-
-            //Xuat email
-            Console.WriteLine("Email: {0}@email.com", convertToNonAccentVietnamese(strBDTemp.ToString()).ToLower());
+            strBDTemp.Append("@email.com");
+            return ConvertToNonAccentVietnamese(strBDTemp.ToString().ToLower());
         }
-        static string convertToNonAccentVietnamese(string strInput) {
+
+        public static string ConvertToNonAccentVietnamese(string strInput) {
             return Regex.Replace(strInput.Normalize(NormalizationForm.FormD), @"\p{IsCombiningDiacriticalMarks}+", String.Empty)
                 .Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
-        static string capitalizeEachWord(string input) {
+
+        public static string CapitalizeEachWord(string input) {
             return Regex.Replace(input, @"\b\w", (Match match) => match.Value.ToString().ToUpper());
         }
         #endregion
-
     }
 }

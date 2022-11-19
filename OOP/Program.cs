@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Collections;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
 
 namespace OOP {
+    #region Shape OOP
     public abstract class HinhHoc {
         public double DienTich {
             get;
@@ -77,6 +72,7 @@ namespace OOP {
         public override double GetPerimeter() => ChuVi = BanKinh * 2 * Math.PI;
         public override string ToString() => $"R = {BanKinh}; {base.ToString()}";
     }
+    #endregion
 
     #region Animal non-static
     interface ICalculate {
@@ -90,7 +86,6 @@ namespace OOP {
             this.weight = _weight;
             this.height = _height;
         }
-
         public Animal(Animal animal) {
             this.weight = animal.weight;
             this.height = animal.height;
@@ -114,11 +109,11 @@ namespace OOP {
     class Cat : Animal, ICalculate {
         private string species;
         private int age;
+
         public Cat(double _weight = 0, double _height = 0, int _age = 0, string _species = "") : base(_weight, _height) {
             this.age = _age;
             this.species = _species;
         }
-
         public Cat(Cat cat) : base(cat) {
             this.age = cat.age;
             this.species = cat.species;

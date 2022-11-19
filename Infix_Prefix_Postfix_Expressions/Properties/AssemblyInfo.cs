@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LearnHardWithDelegate")]
+[assembly: AssemblyTitle("Infix_Prefix_Postfix_Expressions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("LearnHardWithDelegate")]
+[assembly: AssemblyProduct("Infix_Prefix_Postfix_Expressions")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2fb8d6c9-00a4-4f69-b18b-430de1b032a9")]
+[assembly: Guid("c5c97140-4b3a-4c9e-abfd-e57a92feb323")]
 
 // Version information for an assembly consists of the following four values:
 //

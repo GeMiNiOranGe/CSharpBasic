@@ -1,49 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace advance {
+//.NET Framework 4.8.1
+namespace Infix_Prefix_Postfix_Expressions {
     class Program {
         static void Main(string[] args) {
             #region test speed for solve infix string
-            //string strInfix = "   (     200      +      4637     )    *      51   -   (  3   -  2 )   *   4000     ";
-            ////Console.WriteLine(EvaluatePostfix(ConvertInfixToPostfix(strInfix)));
-
-            //for (int i = 0; i < 20; i++) {
-            //    //--------------------------------------------------------------------------------------------------------
-            //    Stopwatch stopwatchArrayList = new Stopwatch();
-            //    stopwatchArrayList.Start();
-
-            //    //check speed some code in here
-            //    EvaluatePostfix(ConvertInfixToPostfix(strInfix));
-
-            //    stopwatchArrayList.Stop();
-            //    Console.WriteLine("EvaluatePostfix: {0:00} Day, {1:00} Hour, {2:00} Minute, {3:00} Second, {4:000} MiliSecond, {5:00000} Tick",
-            //        stopwatchArrayList.Elapsed.Days, stopwatchArrayList.Elapsed.Hours, stopwatchArrayList.Elapsed.Minutes,
-            //        stopwatchArrayList.Elapsed.Seconds, stopwatchArrayList.Elapsed.Milliseconds, stopwatchArrayList.Elapsed.Ticks);
-            //    //--------------------------------------------------------------------------------------------------------
-            //}
+            string strInfix = "    (  200     +    4637   )  *   51   -   (   32   ^   2    -    2    )   *   4000     ";
+            Console.WriteLine("Infix string: " + strInfix);
+            Console.WriteLine("Postfix string: " + ConvertInfixToPostfix(strInfix));
+            Console.WriteLine("Evaluate postfix: " + EvaluatePostfix(ConvertInfixToPostfix(strInfix)));
             #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             Console.ReadKey();
         }
-
         #region solve infix string
         public static int Priority(char cOperator) {
             if (cOperator == '+' || cOperator == '-')
@@ -97,7 +68,8 @@ namespace advance {
         /// <returns></returns>
         public static double EvaluatePostfix(string strPostfix) {
             Stack<double> stackTemp = new Stack<double>();
-            for (int i = 0; i < strPostfix.Length && strPostfix[i] != ' '; i++) {
+            for (int i = 0; i < strPostfix.Length; i++) {
+                for (; strPostfix[i] == ' '; i++) ;
                 if (char.IsDigit(strPostfix[i])) {
                     int iNumTemp = 0;
                     for (; char.IsDigit(strPostfix[i]); i++)
