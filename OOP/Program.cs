@@ -249,6 +249,7 @@ namespace OOP {
             #region get all attribute in a class
             //Animal animal = new Animal(15, 20);
             //PropertyInfo[] propInfos = animal.GetType().GetProperties();
+            //Console.WriteLine(propInfos[0].GetValue(animal));
             //foreach (var propInfo in propInfos) {
             //    bool readable = propInfo.CanRead;
             //    bool writable = propInfo.CanWrite;
