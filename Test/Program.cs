@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace thucHanh {
-    class testSpeed {
+namespace Test {
+    class Program {
         static void Main(string[] args) {
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;

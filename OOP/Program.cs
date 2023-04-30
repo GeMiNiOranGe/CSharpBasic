@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Reflection;    // GetProperties() method
 
 namespace OOP {
     #region Shape OOP
@@ -159,8 +160,8 @@ namespace OOP {
             maSV = _MASV;
             Ten = _Ten;
             diemToan = _diemToan;
-            DiemVan = _diemVan;
-            DiemLy = _diemLy;
+            diemVan = _diemVan;
+            diemLy = _diemLy;
         }
 
         public string MaSV {
@@ -244,7 +245,18 @@ namespace OOP {
             //var tuple = new Tuple<int, Cat>(2, new Cat(15, 30, 15, "Home Cat"));
             //var tuple2 =Tuple.Create(new Cat(25, 20, 50, "Mike Cat"), new Cat(15, 30, 15, "Home Cat"));
             //Console.WriteLine($"1 con meo: {tuple.Item2.ToString()}\nmeo thu 2, 2 con meo: {tuple2.Item2.ToString()}");
-            
+
+            #region get all attribute in a class
+            //Animal animal = new Animal(15, 20);
+            //PropertyInfo[] propInfos = animal.GetType().GetProperties();
+            //foreach (var propInfo in propInfos) {
+            //    bool readable = propInfo.CanRead;
+            //    bool writable = propInfo.CanWrite;
+            //    Console.WriteLine("Read: {0}", readable);
+            //    Console.WriteLine("Write: {0}", writable);
+            //    Console.WriteLine(propInfo.GetValue(animal));
+            //}
+            #endregion
 
             Console.ReadKey();
         }
