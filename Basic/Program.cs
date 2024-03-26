@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Diagnostics;               //Stopwatch
 using System.Text.RegularExpressions;   //Regex
 
-//.NET Framework 4.8.1
 namespace CSharpBasic {
     class Program {
         static void Main(string[] args) {

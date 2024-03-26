@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 
-//.NET Framework 4.8.1
 namespace Infix_Prefix_Postfix_Expressions {
     class Program {
         static void Main(string[] args) {
